@@ -18,7 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('nama');
             $table->string('username');
             $table->string('password');
-            $table->timestamps();
+            $table->dateTime('created_at')->useCurrent() ;
+            $table->dateTime('updated_at')->useCurrent() ;
             $table->softDeletes();
 
 
