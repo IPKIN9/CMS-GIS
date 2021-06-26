@@ -30,23 +30,27 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
-              <h1>Login Form</h1>
+          <form action="{{ route('register') }}" method="POST">
+            @csrf
+              <h1>Register Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" name="nama" placeholder="Nama"  />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="text" class="form-control" name="username" placeholder="Username"  />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <input type="password" class="form-control" name="password" placeholder="Password"  />
+              </div>
+              <div>
+                <button class="btn btn-default submit">Submit</button>
               </div>
 
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">Belum Punya Akun??
-                  <a href="{{ route('register') }}" class="to_register"> Buat Akun </a>
+                <p class="change_link">Sudah Punya Akun ?
+                  <a href="{{ route('login') }}" class="to_register"> Log in </a>
                 </p>
 
                 <div class="clearfix"></div>
@@ -54,6 +58,7 @@
 
                 <div>
                   <h1><i class="fa fa-paw"></i>CMS-GIS</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
             </form>
