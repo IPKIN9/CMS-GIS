@@ -32,6 +32,12 @@
           <section class="login_content">
             <form>
               <h1>Login Form</h1>
+              @if ($msg = Session::get('success'))
+                    <div class="alert alert-success alert">
+                           <button type="button" class="close" data-dismiss="alert"></button>
+                           <strong>{{ $msg }}</strong>
+                    </div>
+              @endif
               <div>
                 <input type="text" class="form-control" placeholder="Username" required="" />
               </div>

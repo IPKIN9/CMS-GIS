@@ -33,9 +33,16 @@
           <form action="{{ route('register') }}" method="POST">
             @csrf
               <h1>Register Form</h1>
+              @if ($errors->any())
+                    <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                            @endforeach
+                    </div>
+              @endif
               <div>
                 <input type="text" class="form-control" name="nama" placeholder="Nama"  />
-              </div>
+              </>
               <div>
                 <input type="text" class="form-control" name="username" placeholder="Username"  />
               </div>
