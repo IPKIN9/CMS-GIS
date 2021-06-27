@@ -33,7 +33,13 @@
             <form>
               <h1>Login Form</h1>
               @if ($msg = Session::get('success'))
-                    <div class="alert alert-success alert">
+                    <div class="alert alert-success">
+                           <button type="button" class="close" data-dismiss="alert"></button>
+                           <strong>{{ $msg }}</strong>
+                    </div>
+              @endif
+              @if ($msg = Session::get('errors'))
+                    <div class="alert alert-danger">
                            <button type="button" class="close" data-dismiss="alert"></button>
                            <strong>{{ $msg }}</strong>
                     </div>
