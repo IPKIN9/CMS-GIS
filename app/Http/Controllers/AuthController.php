@@ -80,7 +80,7 @@ class AuthController extends Controller
             return redirect()->route('login');
         }
         else{
-            Session::flash('errors','Register Gagal!!, silahlan ulangi lagi');
+            Session::flash('er','Register Gagal!!, silahlan ulangi lagi');
             return redirect()->route('login');
         }
     }
