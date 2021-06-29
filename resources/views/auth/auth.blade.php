@@ -39,10 +39,22 @@
                            <strong>{{ $msg }}</strong>
                     </div>
               @endif
-              @if ($msg = Session::get('errors'))
+              @if ($msg = Session::get('er'))
+                    <div class="alert alert-danger">
+                           <strong>{{ $msg }}</strong>
+                    </div>
+              @endif
+              @if ($msg = Session::get('error'))
                     <div class="alert alert-danger">
                            <button type="button" class="close" data-dismiss="alert"></button>
                            <strong>{{ $msg }}</strong>
+                    </div>
+              @endif
+              @if ($errors->any())
+                    <div class="alert alert-danger">
+                            @foreach ($errors->all() as $er)
+                                <div>{{ $er }}</div>
+                            @endforeach
                     </div>
               @endif
               <div>
