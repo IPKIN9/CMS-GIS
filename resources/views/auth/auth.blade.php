@@ -30,7 +30,8 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <form action="{{ route('login') }}" method="POST">
+              @csrf
               <h1>Login Form</h1>
               @if ($msg = Session::get('success'))
                     <div class="alert alert-success">
@@ -45,13 +46,13 @@
                     </div>
               @endif
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" name="username" placeholder="Username" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" name="password" placeholder="Password" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
+                <button class="btn btn-default submit">Log in</button>
               </div>
 
               <div class="clearfix"></div>
