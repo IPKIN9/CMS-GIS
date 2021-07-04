@@ -38,11 +38,12 @@ class AuthController extends Controller
  
         if (Auth::attempt($credentials)) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
+            $request->session()->put('full_name', Auth::user()->nama,);
             return redirect()->route('register');
  
         } else { // false
-            Session::flash('error', 'Username atau password salah');
-            return redirect()->route('login');
+            // Session::flash('error', 'Username atau password salah');
+            return redirect()->route('login')->with('error', 'Username atau password salah');
         }
     }
 
