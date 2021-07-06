@@ -19,3 +19,11 @@ Route::prefix('auth')->group(function () {
     route::get('/register','AuthController@register')->name('register');
     route::post('/register','AuthController@register_p');
 });
+
+Route::prefix('admin')->group(function(){
+    Route::prefix('jeniskasus')->group(function(){
+        Route::get('/','Admin\JenisKasusController@index')->name('jeniskasus');
+        Route::post('/','Admin\JenisKasusController@store');
+    });
+});
+
