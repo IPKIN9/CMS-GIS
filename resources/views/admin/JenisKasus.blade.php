@@ -83,7 +83,7 @@
                 <h4 class="modal-title">JENIS KASUS</h4>
             </div>
             <!-- body modal -->
-            <form action="{{ route('jeniskasus') }}" method="POST">
+            <form action="" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
