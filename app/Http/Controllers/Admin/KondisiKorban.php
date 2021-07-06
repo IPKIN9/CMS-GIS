@@ -9,6 +9,6 @@ class KondisiKorban extends Controller
 {
      public function index()
     {
-        return view('admin.KondisiKorbn');
+        return view('admin.KondisiKorban');
     }
 }
