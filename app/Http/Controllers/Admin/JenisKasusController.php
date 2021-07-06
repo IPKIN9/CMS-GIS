@@ -11,7 +11,7 @@ class JenisKasusController extends Controller
     public function index()
     {
         $data =  JenisKasus::all();
-        return view('admin.JenisKasus', )->withKasus($data);
+        return view('admin.JenisKasus',['data'=>$data] );
     }
     public function store(Request $request)
     {
