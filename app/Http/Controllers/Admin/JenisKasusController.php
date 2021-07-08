@@ -29,4 +29,13 @@ class JenisKasusController extends Controller
         return back()->with('success_edit','Data Berhasil Di Edit');
         
     }
+    public function delete(Request $request, $id)
+    {
+        $data = [
+            'j_kasus' => $request->j_kasus
+        ];
+        JenisKasus::where(['id'=>$id])->delete($data);
+        return back()->with('success_delete','Data Berhasil Di Hapus');
+        
+    }
 }

@@ -44,6 +44,11 @@
                                             {{$msg}}
                                         </div>
                                     @endif
+                                    @if ($msg = Session::get('success_delete'))
+                                    <div class="alert alert-success">
+                                        {{$msg}}
+                                    </div>
+                                    @endif
                                 </p>
                                 <table id="datatable" class="table table-striped table-bordered"
                                     style="width:100%">
@@ -63,8 +68,8 @@
                                                 <td>{{$no++}}</td>
                                                 <td>{{$d->j_kasus}}</td>
                                                 <td>
-                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fas fa-edit"></i></button>
-                                                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fas fa-edit"></i>Edit</button>
+                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fas fa-trash"></i>Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -133,6 +138,35 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                         <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
+@endforeach
+@foreach ($data as $d)
+<form action="/admin/jeniskasus/delete/{{$d->id}}" method="POST">
+@csrf
+    <div id="delete-{{$d->id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+                <!-- heading modal -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Hapus Jenis Kasus</h4>
+                </div>
+                <!-- body modal -->
+                
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Jenis Kasus</label>
+                            <input class="form-control" name="j_kasus" type="text" value="{{$d->j_kasus}}" required>
+                        </div>
+                    </div>
+                    <!-- footer modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                        <button type="submit" class="btn btn-primary" >HAPUS</button>
                     </div>
             </div>
         </div>
