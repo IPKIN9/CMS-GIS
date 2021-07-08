@@ -108,6 +108,7 @@
     </div>
 </div>
 
+{{-- form edit --}}
 {{-- Modal edit --}}
 @foreach ($data as $d)
 <form action="/admin/jeniskasus/update/{{$d->id}}" method="POST">
