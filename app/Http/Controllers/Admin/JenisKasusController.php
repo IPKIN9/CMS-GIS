@@ -18,4 +18,14 @@ class JenisKasusController extends Controller
         JenisKasus::create($request->all());
         return back()->with('succes','Data Berhasil Di Tambahkan');
     }
+    
+    public function update(Request $request, $id)
+    {
+        $data = [
+            'j_kasus' => $request->j_kasus
+        ];
+        JenisKasus::where(['id'=>$id])->update($data);
+        return back()->with('success_edit','Data Berhasil Di Edit');
+        
+    }
 }

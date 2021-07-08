@@ -24,6 +24,6 @@ Route::prefix('admin')->group(function(){
     Route::prefix('jeniskasus')->group(function(){
         Route::get('/','Admin\JenisKasusController@index')->name('jeniskasus');
         Route::post('/','Admin\JenisKasusController@store');
+        Route::post('/update/{d:id}', 'Admin\JenisKasusController@update');
     });
 });
-
