@@ -39,6 +39,11 @@
                                             {{$msg}}
                                         </div>
                                     @endif
+                                    @if ($msg = Session::get('success_edit'))
+                                        <div class="alert alert-success">
+                                            {{$msg}}
+                                        </div>
+                                    @endif
                                 </p>
                                 <table id="datatable" class="table table-striped table-bordered"
                                     style="width:100%">
@@ -58,7 +63,7 @@
                                                 <td>{{$no++}}</td>
                                                 <td>{{$d->j_kasus}}</td>
                                                 <td>
-                                                    <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fas fa-edit"></i></button>
                                                     <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
@@ -74,6 +79,8 @@
 
     </div>
 </div>
+
+{{-- Modal Tambah --}}
 <div id="add" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- konten modal-->
@@ -88,7 +95,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Jenis Kasus</label>
-                        <input class="form-control" name="j_kasus" type="text" placeholder="jenis kasus">
+                        <input class="form-control" name="j_kasus" type="text" placeholder="jenis kasus" required>
                     </div>
                 </div>
                 <!-- footer modal -->
@@ -100,4 +107,35 @@
         </div>
     </div>
 </div>
+
+{{-- Modal edit --}}
+@foreach ($data as $d)
+<form action="/admin/jeniskasus/update/{{$d->id}}" method="POST">
+@csrf
+    <div id="edit-{{$d->id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+                <!-- heading modal -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Jenis Kasus</h4>
+                </div>
+                <!-- body modal -->
+                
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Jenis Kasus</label>
+                            <input class="form-control" name="j_kasus" type="text" value="{{$d->j_kasus}}" required>
+                        </div>
+                    </div>
+                    <!-- footer modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                        <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
+@endforeach
 @endsection
