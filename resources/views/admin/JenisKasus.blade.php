@@ -51,7 +51,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Jenis Kasus</th>
-                                            git <th>Aksi</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
