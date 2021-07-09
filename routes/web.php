@@ -30,9 +30,4 @@ Route::prefix('admin')->group(function(){
     Route::prefix('dahsboard')->group(function () {
         Route::get('/','Admin\DashboardController@index')->name('dashboard');
     });
-
-    Route::prefix('kondisikorban')->group(function () {
-        Route::get('/','Admin\DashboardController@index')->name('dashboard');
-        
-    });
 });
