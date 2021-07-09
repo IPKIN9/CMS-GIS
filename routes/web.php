@@ -42,5 +42,6 @@ Route::prefix('admin')->group(function(){
         Route::get('/','Admin\KondisiKorbanController@index')->name('kondisikorban');
         Route::post('/','Admin\KondisiKorbanController@store');
         Route::post('/update/{d:id}', 'Admin\KondisiKorbanController@update');
+        Route::get('/delete/{id:id}','Admin\KondisiKorbanController@destroy');
     });
 });

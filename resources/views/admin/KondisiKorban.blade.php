@@ -154,5 +154,29 @@
     </div>
 </form>
 @endforeach
+
+@foreach ($data as $d)
+    <div id="delete-{{$d->id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+                <!-- heading modal -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Hapus Kondisi korban</h4>
+                </div>
+                <!-- body modal -->
+                
+                    <div class="modal-body">
+                        <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->kon_kasus }}</strong> ???</h3>
+                    </div>
+                    <!-- footer modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
+                        <a href="/admin/kondisikorban/delete/{{$d->id}}" class="btn btn-danger" >HAPUS</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+@endforeach
     
 @endsection
