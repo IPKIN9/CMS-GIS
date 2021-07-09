@@ -88,5 +88,38 @@
 
     </div>
 </div>
+
+{{-- Modal Tambah --}}
+<div id="add" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- konten modal-->
+        <div class="modal-content">
+            <!-- heading modal -->
+            <div class="modal-header">
+                <h4 class="modal-title">Kondisi korban</h4>
+            </div>
+            <!-- body modal -->
+            <form action="{{ route('kondisikorban') }}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Kondisi korban</label>
+                        <input class="form-control" name="kon_kasus" type="text" placeholder="Kondisi korban" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Keterangan</label>
+                        <input class="form-control" name="ket" type="text" placeholder="Keterangan" required>
+                    </div>
+                </div>
+                <!-- footer modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                    <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
     
 @endsection

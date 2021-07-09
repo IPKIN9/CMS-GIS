@@ -13,4 +13,10 @@ class KondisiKorbanController extends Controller
         $data =  KondisiKorban::all();
         return view('admin.KondisiKorban',['data'=>$data] );
     }
+
+    public function store(Request $request)
+    {
+        KondisiKorban::create($request->all());
+        return back()->with('succes','Data Berhasil Di Tambahkan');
+    }
 }
