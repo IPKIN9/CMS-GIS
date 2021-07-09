@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-
+use App\Model\Jalan;
 use Illuminate\Http\Request;
 
 class JalanController extends Controller
 {
     public function index()
     {
-        return view('admin.jalan');
+        $data = Jalan::all();
+        return view('admin.jalan', ['data' => $data]);
     }
     public function store(Request $request)
     {
