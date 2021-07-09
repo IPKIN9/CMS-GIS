@@ -109,4 +109,39 @@
         </div>
     </div>
 </div>
+
+{{-- Modal edit --}}
+@foreach ($data as $d)
+<form action="/admin/jalan/update/{{$d->id}}" method="POST">
+    @csrf
+    <div id="edit-{{$d->id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+                <!-- heading modal -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Jalan</h4>
+                </div>
+                <!-- body modal -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nama Jalan</label>
+                        <input class="form-control" name="nama_jalan" type="text" value="{{$d->nama_jalan}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Koordinat</label>
+                        <input class="form-control" name="coordinat" type="text" value="{{$d->coordinat}}" required>
+                    </div>
+                </div>
+
+                <!-- footer modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                    <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                </div>
+        </div>
+        </div>
+    </div>
+</form>
+@endforeach
 @endsection
