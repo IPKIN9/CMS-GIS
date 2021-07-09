@@ -68,11 +68,11 @@
                 <ul class="nav side-menu">
                   <li><a href="{{route('dashboard')}}"><i class="fa fa-home"></i> Dashboard</a>
                   </li>
-                  <li><a href="{{route('jeniskasus')}}"><i class="fa fa-edit"></i> Jenis Kasus</a>
+                  <li><a href="{{route('jeniskasus')}}"><i class="fa fa-book"></i> Jenis Kasus</a>
                   </li>
-                  <li><a href="{{route('kondisikorban')}}"><i class="fa fa-desktop"></i> Kondisi Korban</a>
+                  <li><a href=""><i class="fa fa-book"></i> Kondisi Korban</a>
                   </li>
-                  <li><a href="{{route('jalan')}}"><i class="fa fa-table"></i> Jalan</a>
+                  <li><a href=""><i class="fa fa-road"></i> Jalan</a>
                   </li>
                 </ul>
               </div>
