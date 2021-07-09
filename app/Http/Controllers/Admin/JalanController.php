@@ -14,7 +14,8 @@ class JalanController extends Controller
     }
     public function store(Request $request)
     {
-        //
+        Jalan::create($request->all());
+        return back()->with('succes','Data Berhasil Di Tambahkan');
     }
 
     public function update(Request $request, $id)
