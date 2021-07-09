@@ -19,4 +19,15 @@ class KondisiKorbanController extends Controller
         KondisiKorban::create($request->all());
         return back()->with('succes','Data Berhasil Di Tambahkan');
     }
+
+    public function update(Request $request, $id)
+    {
+        $data = [
+            'kon_kasus' => $request->kon_kasus,
+            'ket'       => $request->ket
+        ];
+        KondisiKorban::where(['id'=>$id])->update($data);
+        return back()->with('succes','Data Berhasil Di Edit');
+        
+    }
 }

@@ -122,7 +122,7 @@
 </div>
   
 @foreach ($data as $d)
-<form action="/admin/KondisiKorban/update/{{$d->id}}" method="POST">
+<form action="/admin/kondisikorban/update/{{$d->id}}" method="POST">
     @csrf
     <div id="edit-{{$d->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
