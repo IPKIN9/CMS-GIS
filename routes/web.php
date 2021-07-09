@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','Admin\DashboardController@index')->name('dashboard');
-
-
 Route::prefix('auth')->group(function () {
     route::get('/login', 'AuthController@index')->name('login');
     route::post('/login', 'AuthController@login');
@@ -31,7 +28,7 @@ Route::prefix('admin')->group(function(){
     });
 
     Route::prefix('dahsboard')->group(function () {
-        // Route::get('/','Admin\DashboardController@index')->name('dashboard');
+        Route::get('/','Admin\DashboardController@index')->name('dashboard');
     });
 
     Route::prefix('kondisikorban')->group(function () {
