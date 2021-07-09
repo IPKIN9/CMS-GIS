@@ -28,6 +28,12 @@ class KondisiKorbanController extends Controller
         ];
         KondisiKorban::where(['id'=>$id])->update($data);
         return back()->with('succes','Data Berhasil Di Edit');
-        
+    }
+
+    public function destroy($id)
+    {
+        $data =  KondisiKorban::find($id);
+        $data->delete();
+        return back()->with('succes','Data Berhasil Di Hapus');
     }
 }
