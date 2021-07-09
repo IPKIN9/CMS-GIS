@@ -30,4 +30,8 @@ Route::prefix('admin')->group(function(){
     Route::prefix('dahsboard')->group(function () {
         Route::get('/','Admin\DashboardController@index')->name('dashboard');
     });
+
+    Route::prefix('jalan')->group(function () {
+        Route::get('/','Admin\JalanController@index')->name('jalan');
+    });
 });
