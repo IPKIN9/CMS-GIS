@@ -25,7 +25,7 @@ class JalanController extends Controller
             'coordinat'  => $request->coordinat,
         ];
         Jalan::where(['id'=>$id])->update($data);
-        return back()->with('success_edit','Data Berhasil Di Edit');
+        return back()->with('succes','Data Berhasil Di Edit');
     }
     
     public function destroy($id)
