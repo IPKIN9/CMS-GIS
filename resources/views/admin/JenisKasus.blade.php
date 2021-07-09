@@ -1,5 +1,7 @@
 @extends('layout.master')
-
+@section('title')
+    Jenis Kasus
+@endsection
 @section('content')
 <div class="">
     <div class="page-title">
@@ -117,7 +119,7 @@
 {{-- Modal edit --}}
 @foreach ($data as $d)
 <form action="/admin/jeniskasus/update/{{$d->id}}" method="POST">
-@csrf
+    @csrf
     <div id="edit-{{$d->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- konten modal-->
@@ -144,9 +146,9 @@
     </div>
 </form>
 @endforeach
+
+{{-- Modal Delete --}}
 @foreach ($data as $d)
-<form action="/admin/jeniskasus/delete/{{$d->id}}" method="POST">
-@csrf
     <div id="delete-{{$d->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- konten modal-->
@@ -158,19 +160,15 @@
                 <!-- body modal -->
                 
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label>Jenis Kasus</label>
-                            <input class="form-control" name="j_kasus" type="text" value="{{$d->j_kasus}}" required>
-                        </div>
+                        <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->j_kasus }}</strong> ???</h3>
                     </div>
                     <!-- footer modal -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
-                        <button type="submit" class="btn btn-primary" >HAPUS</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
+                        <a href="/admin/jeniskasus/delete/{{$d->id}}" class="btn btn-danger" >HAPUS</a>
                     </div>
             </div>
         </div>
     </div>
-</form>
 @endforeach
 @endsection
