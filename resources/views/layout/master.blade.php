@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela! | </title>
+    <title>GIS | @yield('title') </title>
 
     <!-- Bootstrap -->
     <link href="{{asset('template/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -72,7 +72,7 @@
                   </li>
                   <li><a class="{{ request()->is('admin/kondisikorban') ? 'active' : ''}}" href="#"><i class="fa fa-book"></i> Kondisi Korban</a>
                   </li>
-                  <li><a class="{{ request()->is('admin/jalan') ? 'active' : ''}}" href="#"><i class="fa fa-road"></i> Jalan</a>
+                  <li><a class="{{ request()->is('admin/jalan') ? 'active' : ''}}" href="{{route('jalan')}}"><i class="fa fa-road"></i> Jalan</a>
                   </li>
                 </ul>
               </div>
