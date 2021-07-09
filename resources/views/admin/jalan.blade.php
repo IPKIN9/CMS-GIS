@@ -75,7 +75,38 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
+{{-- Modal Tambah --}}
+<div id="add" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- konten modal-->
+        <div class="modal-content">
+            <!-- heading modal -->
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Jalan</h4>
+            </div>
+            <!-- body modal -->
+            <form action="{{ route('jalan') }}" method="POST">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nama Jalan</label>
+                        <input class="form-control" name="nama_jalan" type="text" placeholder="Nama Jalan ....." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Koordinat</label>
+                        <input class="form-control" name="coordinat" type="text" placeholder="Koordinat ...." required>
+                    </div>
+                </div>
+                <!-- footer modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                    <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 @endsection
