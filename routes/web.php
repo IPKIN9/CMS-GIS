@@ -37,4 +37,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/update/{id:id}','Admin\JalanController@update');
         Route::get('/delete/{id:id}','Admin\JalanController@destroy');
     });
+
+    Route::prefix('kondisikorban')->group(function(){
+        Route::get('/','Admin\KondisiKorbanController@index')->name('kondisikorban');
+    });
 });
