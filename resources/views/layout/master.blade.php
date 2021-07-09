@@ -66,13 +66,13 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="{{route('dashboard')}}"><i class="fa fa-home"></i> Dashboard</a>
+                  <li><a class="{{ request()->is('admin/dashboard') ? 'active' : ''}}" href="{{route('dashboard')}}"><i class="fa fa-home"></i> Dashboard</a>
                   </li>
-                  <li><a href="{{route('jeniskasus')}}"><i class="fa fa-book"></i> Jenis Kasus</a>
+                  <li><a class="{{ request()->is('admin/jeniskasus') ? 'active' : ''}}" href="{{route('jeniskasus')}}"><i class="fa fa-book"></i> Jenis Kasus</a>
                   </li>
-                  <li><a href=""><i class="fa fa-book"></i> Kondisi Korban</a>
+                  <li><a class="{{ request()->is('admin/kondisikorban') ? 'active' : ''}}" href="#"><i class="fa fa-book"></i> Kondisi Korban</a>
                   </li>
-                  <li><a href=""><i class="fa fa-road"></i> Jalan</a>
+                  <li><a class="{{ request()->is('admin/jalan') ? 'active' : ''}}" href="#"><i class="fa fa-road"></i> Jalan</a>
                   </li>
                 </ul>
               </div>
