@@ -150,8 +150,8 @@
                 <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->nama_jalan }}</strong> ???</h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
-                <a href="/admin/jalan/delete/{{ $d->id }}" class="btn btn-primary">SIMPAN</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
+                <a href="/admin/jalan/delete/{{ $d->id }}" class="btn btn-danger">Hapus</a>
             </div>
             </div>
         </div>

@@ -30,6 +30,8 @@ class JalanController extends Controller
     
     public function destroy($id)
     {
-        //
+        $data =  Jalan::find($id);
+        $data->delete();
+        return back()->with('succes','Data Berhasil Di Hapus');
     }
 }
