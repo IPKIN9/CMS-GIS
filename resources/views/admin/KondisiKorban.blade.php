@@ -108,7 +108,7 @@
                     </div>
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <input class="form-control" name="ket" type="text" placeholder="Keterangan" required>
+                        <textarea name="ket" id="" class="form-control" cols="30" rows="10"></textarea>
                     </div>
                 </div>
                 <!-- footer modal -->
@@ -121,6 +121,38 @@
     </div>
 </div>
   
-
+@foreach ($data as $d)
+<form action="/admin/KondisiKorban/update/{{$d->id}}" method="POST">
+    @csrf
+    <div id="edit-{{$d->id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+                <!-- heading modal -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Kondisi korban</h4>
+                </div>
+                <!-- body modal -->
+                
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Kondisi korban</label>
+                            <input class="form-control" name="kon_kasus" type="text" value="{{$d->kon_kasus}}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Keterangan</label>
+                            <textarea name="ket" id="" class="form-control" cols="30" rows="10">{{$d->ket}}</textarea>
+                        </div>
+                    </div>
+                    <!-- footer modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                        <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
+@endforeach
     
 @endsection
