@@ -27,4 +27,8 @@ Route::prefix('admin')->group(function(){
         Route::post('/update/{d:id}', 'Admin\JenisKasusController@update');
         Route::post('/delete/{d:id}', 'Admin\JenisKasusController@delete');
     });
+
+    Route::prefix('dahsboard')->group(function () {
+        Route::get('/','Admin\DashboardController@index')->name('dashboard');
+    });
 });
