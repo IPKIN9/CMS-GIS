@@ -35,5 +35,6 @@ Route::prefix('admin')->group(function(){
         Route::get('/','Admin\JalanController@index')->name('jalan');
         Route::post('/','Admin\JalanController@store');
         Route::post('/update/{id:id}','Admin\JalanController@update');
+        Route::get('/delete/{id:id}','Admin\JalanController@destroy');
     });
 });
