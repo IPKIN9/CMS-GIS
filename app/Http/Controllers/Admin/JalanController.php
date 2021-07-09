@@ -20,7 +20,12 @@ class JalanController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+            'nama_jalan' => $request->nama_jalan,
+            'coordinat'  => $request->coordinat,
+        ];
+        Jalan::where(['id'=>$id])->update($data);
+        return back()->with('success_edit','Data Berhasil Di Edit');
     }
     
     public function destroy($id)
