@@ -31,16 +31,6 @@
                                             {{$msg}}
                                         </div>
                                     @endif
-                                    @if ($msg = Session::get('success_edit'))
-                                        <div class="alert alert-success">
-                                            {{$msg}}
-                                        </div>
-                                    @endif
-                                    @if ($msg = Session::get('success_delete'))
-                                    <div class="alert alert-success">
-                                        {{$msg}}
-                                    </div>
-                                    @endif
                                 </p>
                                 <table id="datatable" class="table table-striped table-bordered"
                                     style="width:100%">
