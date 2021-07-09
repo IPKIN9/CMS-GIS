@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::prefix('auth')->group(function () {
     route::get('/login', 'AuthController@index')->name('login');
     route::post('/login', 'AuthController@login');
@@ -26,5 +25,9 @@ Route::prefix('admin')->group(function(){
         Route::post('/','Admin\JenisKasusController@store');
         Route::post('/update/{d:id}', 'Admin\JenisKasusController@update');
         Route::post('/delete/{d:id}', 'Admin\JenisKasusController@delete');
+    });
+
+    Route::prefix('dahsboard')->group(function () {
+        Route::get('/','Admin\DashboardController@index')->name('dashboard');
     });
 });
