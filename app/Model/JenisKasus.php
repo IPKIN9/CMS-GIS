@@ -9,5 +9,10 @@ class JenisKasus extends Model
 {
     use SoftDeletes;
     protected $table = 'jenis_kasus';
-    protected $fillable =['id','j_kasus','created_at','updated_at','deleted_at'];
+    protected $fillable =[
+        'id','j_kasus',
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 }

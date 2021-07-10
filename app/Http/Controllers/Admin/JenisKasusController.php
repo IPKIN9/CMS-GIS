@@ -18,8 +18,7 @@ class JenisKasusController extends Controller
         JenisKasus::create($request->all());
         return back()->with('succes','Data Berhasil Di Tambahkan');
     }
-    
-    // update succes notif
+
     public function update(Request $request, $id)
     {
         $data = [

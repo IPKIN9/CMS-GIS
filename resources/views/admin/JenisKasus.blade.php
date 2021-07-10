@@ -6,7 +6,7 @@
 <div class="">
     <div class="page-title">
         <div class="title_left">
-            <h3>Users <small>Some examples to get you started</small></h3>
+            <h3>GIS <small>Jenis Kasus</small></h3>
         </div>
 
         <div class="title_right">
@@ -27,7 +27,7 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Default Example <small>Users</small></h2>
+                    <h2>Data Jenis Kasus</h2>
                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
                     <div class="clearfix"></div>
                 </div>
@@ -87,16 +87,12 @@
     </div>
 </div>
 
-{{-- Modal Tambah --}}
 <div id="add" class="modal fade" role="dialog">
     <div class="modal-dialog">
-        <!-- konten modal-->
         <div class="modal-content">
-            <!-- heading modal -->
             <div class="modal-header">
                 <h4 class="modal-title">JENIS KASUS</h4>
             </div>
-            <!-- body modal -->
             <form action="{{ route('jeniskasus') }}" method="POST">
                 @csrf
                 <div class="modal-body">
@@ -105,7 +101,6 @@
                         <input class="form-control" name="j_kasus" type="text" placeholder="jenis kasus" required>
                     </div>
                 </div>
-                <!-- footer modal -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                     <button type="submit" class="btn btn-primary" >SIMPAN</button>
@@ -115,28 +110,22 @@
     </div>
 </div>
 
-{{-- form edit --}}
-{{-- Modal edit --}}
+
 @foreach ($data as $d)
 <form action="/admin/jeniskasus/update/{{$d->id}}" method="POST">
     @csrf
     <div id="edit-{{$d->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <!-- konten modal-->
             <div class="modal-content">
-                <!-- heading modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Jenis Kasus</h4>
                 </div>
-                <!-- body modal -->
-                
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Jenis Kasus</label>
                             <input class="form-control" name="j_kasus" type="text" value="{{$d->j_kasus}}" required>
                         </div>
                     </div>
-                    <!-- footer modal -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                         <button type="submit" class="btn btn-primary" >SIMPAN</button>
@@ -147,22 +136,17 @@
 </form>
 @endforeach
 
-{{-- Modal Delete --}}
+
 @foreach ($data as $d)
     <div id="delete-{{$d->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <!-- konten modal-->
             <div class="modal-content">
-                <!-- heading modal -->
                 <div class="modal-header">
                     <h4 class="modal-title">Hapus Jenis Kasus</h4>
                 </div>
-                <!-- body modal -->
-                
                     <div class="modal-body">
-                        <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->j_kasus }}</strong> ???</h3>
+                        <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->j_kasus }}</strong> ?</h3>
                     </div>
-                    <!-- footer modal -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
                         <a href="/admin/jeniskasus/delete/{{$d->id}}" class="btn btn-danger" >HAPUS</a>
