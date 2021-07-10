@@ -2,35 +2,37 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Model\JenisKasus;
+use App\Model\KondisiKorban;
 
 use Illuminate\Http\Request;
 
-class JenisKasusController extends Controller
+class KondisiKorbanController extends Controller
 {
     public function index()
     {
-        $data =  JenisKasus::all();
-        return view('admin.JenisKasus',['data'=>$data] );
+        $data =  KondisiKorban::all();
+        return view('admin.KondisiKorban',['data'=>$data] );
     }
+
     public function store(Request $request)
     {
-        JenisKasus::create($request->all());
+        KondisiKorban::create($request->all());
         return back()->with('succes','Data Berhasil Di Tambahkan');
     }
 
     public function update(Request $request, $id)
     {
         $data = [
-            'j_kasus' => $request->j_kasus
+            'kon_kasus' => $request->kon_kasus,
+            'ket'       => $request->ket
         ];
-        JenisKasus::where(['id'=>$id])->update($data);
+        KondisiKorban::where(['id'=>$id])->update($data);
         return back()->with('succes','Data Berhasil Di Edit');
-        
     }
-    public function delete($id)
+
+    public function destroy($id)
     {
-        $data =  JenisKasus::find($id);
+        $data =  KondisiKorban::find($id);
         $data->delete();
         return back()->with('succes','Data Berhasil Di Hapus');
     }

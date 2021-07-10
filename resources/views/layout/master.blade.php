@@ -70,7 +70,7 @@
                   </li>
                   <li><a class="{{ request()->is('admin/jeniskasus') ? 'active' : ''}}" href="{{route('jeniskasus')}}"><i class="fa fa-book"></i> Jenis Kasus</a>
                   </li>
-                  <li><a class="{{ request()->is('admin/kondisikorban') ? 'active' : ''}}" href="#"><i class="fa fa-book"></i> Kondisi Korban</a>
+                  <li><a class="{{ request()->is('admin/kondisikorban') ? 'active' : ''}}" href="{{route('kondisikorban')}}"><i class="fa fa-book"></i> Kondisi Korban</a>
                   </li>
                   <li><a class="{{ request()->is('admin/jalan') ? 'active' : ''}}" href="{{route('jalan')}}"><i class="fa fa-road"></i> Jalan</a>
                   </li>

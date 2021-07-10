@@ -4,21 +4,32 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJenisKasusTable extends Migration
+class CreateKondisiKorbanTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('jenis_kasus', function (Blueprint $table) {
+        Schema::create('kondisi_korban', function (Blueprint $table) {
             $table->id();
-            $table->string('j_kasus');
+            $table->string('kon_kasus');
+            $table->string('ket');
             $table->dateTime('created_at')->useCurrent() ;
             $table->dateTime('updated_at')->useCurrent() ;
             $table->softDeletes();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('_jenis_kasus');
+        Schema::dropIfExists('kondisi_korban');
     }
 }
