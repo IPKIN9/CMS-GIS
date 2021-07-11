@@ -10,8 +10,15 @@ class KondisiKorbanController extends Controller
 {
     public function index()
     {
-        $data =  KondisiKorban::all();
-        return view('admin.KondisiKorban',['data'=>$data] );
+        if (Session('loged_in') == 'login') {
+            $data =  KondisiKorban::all();
+            return view('admin.KondisiKorban',['data'=>$data] );
+        }
+        else
+        {
+            return redirect()->route('login')->with('login', 'Anda Harus Login Terlebih Dahulu');
+        }
+        
     }
 
     public function store(Request $request)

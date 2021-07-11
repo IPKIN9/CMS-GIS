@@ -6,18 +6,7 @@
 <div class="">
     <div class="page-title">
         <div class="title_left">
-            <h3>Users <small>Some examples to get you started</small></h3>
-        </div>
-
-        <div class="title_right">
-            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                </div>
-            </div>
+            <h3>GIS <small>Data Kondisi Korban</small></h3>
         </div>
     </div>
 
@@ -27,7 +16,7 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Default Example <small>Users</small></h2>
+                    <h2>GIS <small>Kondisi Korban</small></h2>
                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
                     <div class="clearfix"></div>
                 </div>
@@ -72,8 +61,8 @@
                                                 <td>{{$d->kon_kasus}}</td>
                                                 <td>{{$d->ket}}</td>
                                                 <td>
-                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fas fa-edit"></i>Edit</button>
-                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fas fa-trash"></i>Hapus</button>
+                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -167,7 +156,7 @@
                 <!-- body modal -->
                 
                     <div class="modal-body">
-                        <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->kon_kasus }}</strong> ???</h3>
+                        <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->kon_kasus }}</strong> ?</h3>
                     </div>
                     <!-- footer modal -->
                     <div class="modal-footer">
