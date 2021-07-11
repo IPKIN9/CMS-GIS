@@ -130,7 +130,7 @@
       
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            Gentelella - Bootstrap Admin Template by <a href="">Colorlib</a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -138,7 +138,6 @@
       </div>
     </div>
 
-<<<<<<< HEAD
     {{-- modal logout --}}
     <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -162,9 +161,6 @@
   {{-- end modal logout --}}
 
     <!-- jQuery -->
-=======
-   
->>>>>>> 9786c836bd1fc9e412fd9a8174e178f7f83fd29b
     <script src="{{asset('template/vendors/jquery/dist/jquery.min.js')}}"></script>
    
     <script src="{{asset('template/vendors/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
