@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->group(function () {
     route::get('/', 'AuthController@index')->name('login');
     route::post('/', 'AuthController@login');
+=======
+
+Route::prefix('auth')->group(function () {
+    route::get('/login', 'AuthController@index')->name('login');
+    route::post('/login', 'AuthController@login');
+>>>>>>> 9786c836bd1fc9e412fd9a8174e178f7f83fd29b
     route::get('/register','AuthController@register')->name('register');
     route::post('/register','AuthController@register_p');
 });

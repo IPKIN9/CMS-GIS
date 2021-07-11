@@ -6,7 +6,16 @@
 <div class="">
     <div class="page-title">
         <div class="title_left">
+<<<<<<< HEAD
             <h3>GIS <small>Data Kondisi Korban</small></h3>
+=======
+            <h3>GIS <small>Kondisi korban</small></h3>
+        </div>
+
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            </div>
+>>>>>>> 9786c836bd1fc9e412fd9a8174e178f7f83fd29b
         </div>
     </div>
 
@@ -16,7 +25,11 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
+<<<<<<< HEAD
                     <h2>GIS <small>Kondisi Korban</small></h2>
+=======
+                    <h2>Data kondisi korban</h2>
+>>>>>>> 9786c836bd1fc9e412fd9a8174e178f7f83fd29b
                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
                     <div class="clearfix"></div>
                 </div>
@@ -78,16 +91,14 @@
     </div>
 </div>
 
-{{-- Modal Tambah --}}
 <div id="add" class="modal fade" role="dialog">
     <div class="modal-dialog">
-        <!-- konten modal-->
+
         <div class="modal-content">
-            <!-- heading modal -->
+         
             <div class="modal-header">
                 <h4 class="modal-title">Kondisi korban</h4>
             </div>
-            <!-- body modal -->
             <form action="{{ route('kondisikorban') }}" method="POST">
                 @csrf
                 <div class="modal-body">
@@ -100,7 +111,7 @@
                         <textarea name="ket" id="" class="form-control" cols="30" rows="10"></textarea>
                     </div>
                 </div>
-                <!-- footer modal -->
+              
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                     <button type="submit" class="btn btn-primary" >SIMPAN</button>
@@ -115,13 +126,13 @@
     @csrf
     <div id="edit-{{$d->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <!-- konten modal-->
+           
             <div class="modal-content">
-                <!-- heading modal -->
+         
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Kondisi korban</h4>
                 </div>
-                <!-- body modal -->
+             
                 
                     <div class="modal-body">
                         <div class="form-group">
@@ -133,7 +144,7 @@
                             <textarea name="ket" id="" class="form-control" cols="30" rows="10">{{$d->ket}}</textarea>
                         </div>
                     </div>
-                    <!-- footer modal -->
+                  
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                         <button type="submit" class="btn btn-primary" >SIMPAN</button>
@@ -147,18 +158,18 @@
 @foreach ($data as $d)
     <div id="delete-{{$d->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <!-- konten modal-->
+           
             <div class="modal-content">
-                <!-- heading modal -->
+           
                 <div class="modal-header">
                     <h4 class="modal-title">Hapus Kondisi korban</h4>
                 </div>
-                <!-- body modal -->
+            
                 
                     <div class="modal-body">
                         <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->kon_kasus }}</strong> ?</h3>
                     </div>
-                    <!-- footer modal -->
+                  
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
                         <a href="/admin/kondisikorban/delete/{{$d->id}}" class="btn btn-danger" >HAPUS</a>
