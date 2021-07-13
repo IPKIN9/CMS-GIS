@@ -9,8 +9,14 @@ class JalanController extends Controller
 {
     public function index()
     {
-        $data = Jalan::all();
-        return view('admin.jalan', ['data' => $data]);
+        if (Session('loged_in') == 'login') {
+            $data = Jalan::all();
+            return view('admin.jalan', ['data' => $data]);
+        }
+        else
+        {
+            return redirect()->route('login')->with('login', 'Anda Harus Login Terlebih Dahulu');
+        }
     }
     public function store(Request $request)
     {

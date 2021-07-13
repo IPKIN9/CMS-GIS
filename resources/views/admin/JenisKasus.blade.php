@@ -8,11 +8,6 @@
         <div class="title_left">
             <h3>GIS <small>Jenis Kasus</small></h3>
         </div>
-
-        <div class="title_right">
-            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-            </div>
-        </div>
     </div>
 
     <div class="clearfix"></div>
@@ -64,8 +59,8 @@
                                                 <td>{{$no++}}</td>
                                                 <td>{{$d->j_kasus}}</td>
                                                 <td>
-                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fas fa-edit"></i>Edit</button>
-                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fas fa-trash"></i>Hapus</button>
+                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -44,6 +44,11 @@
                            <strong>{{ $msg }}</strong>
                     </div>
               @endif
+              @if (Session('login'))
+                    <div class="alert alert-danger">
+                           <strong>{{ session('login') }}</strong>
+                    </div>
+              @endif
               @if ($msg = Session::get('error'))
                     <div class="alert alert-danger">
                            <button type="button" class="close" data-dismiss="alert"></button>

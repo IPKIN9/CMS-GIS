@@ -39,7 +39,8 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
             $request->session()->put('full_name', Auth::user()->nama,);
-            return redirect()->route('register');
+            $request->session()->put('loged_in', 'login',);
+            return redirect()->route('dashboard');
  
         } else { // false
             // Session::flash('error', 'Username atau password salah');
@@ -84,5 +85,11 @@ class AuthController extends Controller
             Session::flash('er','Register Gagal!!, silahlan ulangi lagi');
             return redirect()->route('login');
         }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        return redirect()->route('login');
     }
 }

@@ -6,12 +6,16 @@
 <div class="">
     <div class="page-title">
         <div class="title_left">
+<<<<<<< HEAD
+            <h3>GIS <small>Data Kondisi Korban</small></h3>
+=======
             <h3>GIS <small>Kondisi korban</small></h3>
         </div>
 
         <div class="title_right">
             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
             </div>
+>>>>>>> 9786c836bd1fc9e412fd9a8174e178f7f83fd29b
         </div>
     </div>
 
@@ -21,7 +25,11 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
+<<<<<<< HEAD
+                    <h2>GIS <small>Kondisi Korban</small></h2>
+=======
                     <h2>Data kondisi korban</h2>
+>>>>>>> 9786c836bd1fc9e412fd9a8174e178f7f83fd29b
                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
                     <div class="clearfix"></div>
                 </div>
@@ -66,8 +74,8 @@
                                                 <td>{{$d->kon_kasus}}</td>
                                                 <td>{{$d->ket}}</td>
                                                 <td>
-                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fas fa-edit"></i>Edit</button>
-                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fas fa-trash"></i>Hapus</button>
+                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
