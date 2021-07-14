@@ -41,6 +41,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id:id}', 'Admin\KondisiKorbanController@destroy');
     });
 
+    Route::resource('Web Decsription','Admin\WebDescController')->except('create','show');
     
     Route::resource('Tkp', 'Admin\TkpController')->except('create','show');
     
