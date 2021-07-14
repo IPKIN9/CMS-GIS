@@ -8,6 +8,12 @@ Route::prefix('auth')->group(function () {
     route::get('/register', 'AuthController@register')->name('register');
     route::post('/register', 'AuthController@register_p');
 });
+Route::prefix('/')->group(function () {
+    route::get('/', 'AuthController@index')->name('login');
+    route::post('/', 'AuthController@login');
+    route::get('/register', 'AuthController@register')->name('register');
+    route::post('/register', 'AuthController@register_p');
+});
 
 Route::prefix('admin')->group(function () {
     Route::prefix('jeniskasus')->group(function () {

@@ -52,8 +52,8 @@
                                                 <td>{{$d->nama_jalan}}</td>
                                                 <td>{{$d->coordinat}}</td>
                                                 <td>
-                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fas fa-edit"></i>Edit</button>
-                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fas fa-trash"></i>Hapus</button>
+                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fa fa-edit"></i> Edit</button>
+                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -147,7 +147,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->nama_jalan }}</strong> ???</h3>
+                <h3>Apakah anda yakin ingin menghapus data <strong>{{ $d->nama_jalan }}</strong> ?</h3>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>

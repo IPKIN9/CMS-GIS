@@ -10,9 +10,17 @@ class JenisKasusController extends Controller
 {
     public function index()
     {
-        $data =  JenisKasus::all();
-        return view('admin.JenisKasus',['data'=>$data] );
+        if (Session('loged_in') == 'login') 
+        {
+            $data =  JenisKasus::all();
+            return view('admin.JenisKasus',['data'=>$data] );
+        }
+        else
+        {
+            return redirect()->route('login')->with('login', 'Anda Harus Login Terlebih Dahulu');
+        }
     }
+    
     public function store(Request $request)
     {
         JenisKasus::create($request->all());
