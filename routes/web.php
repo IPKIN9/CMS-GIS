@@ -42,5 +42,8 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::resource('Web Decsription','Admin\WebDescController')->except('create','show');
+    
+    Route::resource('Tkp', 'Admin\TkpController')->except('create','show');
+    
 });
 Route::get('/logout', 'AuthController@logout')->name('logout');

@@ -84,6 +84,8 @@
                 </li>
                 <li><a class="{{ Route::is('Web Decsription.index') ? 'active' : ''}}"
                     href="{{route('Web Decsription.index')}}"><i class="fa fa-road"></i> Web Decsription</a>
+                <li><a class="{{ Route::is('Tkp.index') ? 'active' : ''}}" href="{{route('Tkp.index')}}"><i
+                      class="fa fa-road"></i> TKP</a>
                 </li>
               </ul>
             </div>
