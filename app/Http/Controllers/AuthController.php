@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Validator ;
-use Hash;
-use Session;
 use App\Model\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -22,26 +22,25 @@ class AuthController extends Controller
             'username'              => 'required|string',
             'password'              => 'required|string'
         ];
- 
+
         $messages = [
             'username.required'     => 'Username wajib diisi',
             'password.required'     => 'Password wajib diisi'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
- 
-        if($validator->fails()){
+
+        if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($request->all);
         }
 
         $credentials = $request->only('username', 'password');
- 
+
         if (Auth::attempt($credentials)) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
             $request->session()->put('full_name', Auth::user()->nama,);
             $request->session()->put('loged_in', 'login',);
             return redirect()->route('dashboard');
- 
         } else { // false
             // Session::flash('error', 'Username atau password salah');
             return redirect()->route('login')->with('error', 'Username atau password salah');
@@ -54,35 +53,33 @@ class AuthController extends Controller
     }
     public function register_p(Request $request)
     {
-        $rules =[
-            'nama'=> 'required',
+        $rules = [
+            'nama' => 'required',
             'username' => 'required',
             'password' => 'required'
         ];
 
-        $messages =[
+        $messages = [
             'nama.required' => 'Nama Tidak Boleh Kosong',
             'username.required' => 'Username Tidak Boleh Kosong',
-            'password.required' => 'Password Tidak Boleh Kosong!!!' 
+            'password.required' => 'Password Tidak Boleh Kosong!!!'
         ];
 
-        $validator = Validator::make($request->all(),$rules,$messages);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput($request->all);
-            
         }
         $user = new User;
         $user->nama = ($request->nama);
-        $user->username = ($request->username); 
+        $user->username = ($request->username);
         $user->password = Hash::make($request->password);
         $simpan = $user->save();
-        
-        if ($simpan){
-            Session::flash('success','Register berhasil! silahkan login untuk mengakses data');
+
+        if ($simpan) {
+            Session::flash('success', 'Register berhasil! silahkan login untuk mengakses data');
             return redirect()->route('login');
-        }
-        else{
-            Session::flash('er','Register Gagal!!, silahlan ulangi lagi');
+        } else {
+            Session::flash('er', 'Register Gagal!!, silahlan ulangi lagi');
             return redirect()->route('login');
         }
     }

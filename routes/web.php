@@ -41,3 +41,4 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id:id}', 'Admin\KondisiKorbanController@destroy');
     });
 });
+Route::get('/logout', 'AuthController@logout')->name('logout');
