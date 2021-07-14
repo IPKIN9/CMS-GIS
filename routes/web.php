@@ -40,5 +40,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/update/{d:id}', 'Admin\KondisiKorbanController@update');
         Route::get('/delete/{id:id}', 'Admin\KondisiKorbanController@destroy');
     });
+
+    Route::resource('Web Decsription','Admin\WebDescController')->except('create','show');
 });
 Route::get('/logout', 'AuthController@logout')->name('logout');
