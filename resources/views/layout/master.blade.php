@@ -232,7 +232,7 @@
   <script src="{{asset('template/vendors/pdfmake/build/pdfmake.min.js')}}"></script>
   <script src="{{asset('template/vendors/pdfmake/build/vfs_fonts.js')}}"></script>
 
-
+  @yield('js')
 </body>
 
 </html>
