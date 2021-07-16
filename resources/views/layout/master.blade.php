@@ -82,8 +82,8 @@
                 <li><a class="{{ request()->is('admin/jalan') ? 'active' : ''}}" href="{{route('jalan')}}"><i
                       class="fa fa-road"></i> Jalan</a>
                 </li>
-                <li><a class="{{ Route::is('Web Decsription.index') ? 'active' : ''}}"
-                    href="{{route('Web Decsription.index')}}"><i class="fa fa-road"></i> Web Decsription</a>
+                <li><a class="{{ Route::is('Web_Decsription.index') ? 'active' : ''}}"
+                    href="{{route('Web_Decsription.index')}}"><i class="fa fa-road"></i> Web Decsription</a>
                 <li><a class="{{ Route::is('Tkp.index') ? 'active' : ''}}" href="{{route('Tkp.index')}}"><i
                       class="fa fa-road"></i> TKP</a>
                 </li>
@@ -234,7 +234,7 @@
   <script src="{{asset('template/vendors/pdfmake/build/pdfmake.min.js')}}"></script>
   <script src="{{asset('template/vendors/pdfmake/build/vfs_fonts.js')}}"></script>
 
-
+  @yield('js')
 </body>
 
 </html>
