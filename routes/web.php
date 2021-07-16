@@ -43,7 +43,10 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('Web Decsription','Admin\WebDescController')->except('create','show');
     
-    Route::resource('Tkp', 'Admin\TkpController')->except('create','show');
+    Route::resource('Tkp', 'Admin\TkpController')
+    ->except('create','show','update','destroy');
+    Route::post('Tkp/Update','Admin\TkpController@update')->name('Tkp.update');
+    Route::post('Tkp/Destroy','Admin\TkpController@destroy')->name('Tkp.destroy');
     
 });
 Route::get('/logout', 'AuthController@logout')->name('logout');
