@@ -1,6 +1,6 @@
-@extends('layout.master')
+@extends('layout.master2')
 @section('title')
-    Jalan
+Jalan
 @endsection
 
 @section('content')
@@ -17,8 +17,7 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Data Jalan</h2>
-                   <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
+                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -27,13 +26,12 @@
                             <div class="card-box table-responsive">
                                 <p class="text-muted font-13 m-b-30">
                                     @if ($msg = Session::get('succes'))
-                                        <div class="alert alert-success">
-                                            {{$msg}}
-                                        </div>
+                                    <div class="alert alert-success">
+                                        {{$msg}}
+                                    </div>
                                     @endif
                                 </p>
-                                <table id="datatable" class="table table-striped table-bordered"
-                                    style="width:100%">
+                                <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -44,18 +42,22 @@
                                     </thead>
                                     <tbody>
                                         @php
-                                            $no= 1;
+                                        $no= 1;
                                         @endphp
                                         @foreach ($data as $d)
-                                            <tr>
-                                                <td>{{$no++}}</td>
-                                                <td>{{$d->nama_jalan}}</td>
-                                                <td>{{$d->coordinat}}</td>
-                                                <td>
-                                                    <button class="btn btn-warning" data-toggle="modal" data-target="#edit-{{$d->id}}"><i class="fa fa-edit"></i> Edit</button>
-                                                    <button class="btn btn-danger"  data-toggle="modal" data-target="#delete-{{$d->id}}" ><i class="fa fa-trash"></i> Hapus</button>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td>{{$no++}}</td>
+                                            <td>{{$d->nama_jalan}}</td>
+                                            <td>{{$d->coordinat}}</td>
+                                            <td>
+                                                <button class="btn btn-warning" data-toggle="modal"
+                                                    data-target="#edit-{{$d->id}}"><i class="fa fa-edit"></i>
+                                                    Edit</button>
+                                                <button class="btn btn-danger" data-toggle="modal"
+                                                    data-target="#delete-{{$d->id}}"><i class="fa fa-trash"></i>
+                                                    Hapus</button>
+                                            </td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -83,7 +85,8 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Nama Jalan</label>
-                        <input class="form-control" name="nama_jalan" type="text" placeholder="Nama Jalan ....." required>
+                        <input class="form-control" name="nama_jalan" type="text" placeholder="Nama Jalan ....."
+                            required>
                     </div>
                     <div class="form-group">
                         <label>Koordinat</label>
@@ -93,7 +96,7 @@
                 <!-- footer modal -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
-                    <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                    <button type="submit" class="btn btn-primary">SIMPAN</button>
                 </div>
             </form>
         </div>
@@ -127,9 +130,9 @@
                 <!-- footer modal -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
-                    <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                    <button type="submit" class="btn btn-primary">SIMPAN</button>
                 </div>
-        </div>
+            </div>
         </div>
     </div>
 </form>
@@ -137,13 +140,14 @@
 
 {{-- modal delete --}}
 @foreach ($data as $d)
-    <div class="modal fade" id="delete-{{$d->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
+<div class="modal fade" id="delete-{{$d->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Hapus data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -153,8 +157,8 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">BATAL</button>
                 <a href="/admin/jalan/delete/{{ $d->id }}" class="btn btn-danger">Hapus</a>
             </div>
-            </div>
         </div>
     </div>
+</div>
 @endforeach
 @endsection
