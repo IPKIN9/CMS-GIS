@@ -87,12 +87,12 @@
                 <li><a class="{{ Route::is('Tkp.index') ? 'active' : ''}}" href="{{route('Tkp.index')}}"><i
                       class="fa fa-road"></i> TKP</a>
                 </li>
+                <li><a class="{{ Route::is('ContactUs.index') ? 'active' : ''}}" 
+                  href="{{route('ContactUs.index')}}"><i class="fa fa-phone"></i>Contact Us</a>
+                </li>
               </ul>
             </div>
-
           </div>
-
-
 
           <div class="sidebar-footer hidden-small">
             <a data-toggle="tooltip" data-placement="top" title="Settings">
