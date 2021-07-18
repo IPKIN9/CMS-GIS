@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.master2')
 @section('title')
 Contact Us
 @endsection
@@ -21,7 +21,7 @@ Contact Us
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Data Contact Us</h2>
+
                     <button class="btn btn-primary float-right" data-toggle="modal"
                         data-target="#univ-modal">Tambah</button>
                     <div class="clearfix"></div>
@@ -89,14 +89,12 @@ Contact Us
                     <div class="form-group">
                         <input type="hidden" name="id" id="id">
                         <label>Alamat</label>
-                        <input class="form-control" id="alamat" name="alamat" type="text"
-                            placeholder="Alamat" required>
+                        <input class="form-control" id="alamat" name="alamat" type="text" placeholder="Alamat" required>
                         <label>Telepon</label>
-                        <input class="form-control" id="telepon" name="telepon" type="text"
-                            placeholder="Nomor telepon" required>
+                        <input class="form-control" id="telepon" name="telepon" type="text" placeholder="Nomor telepon"
+                            required>
                         <label>Email</label>
-                        <input class="form-control" id="email" name="email" type="text"
-                            placeholder="Email" required>
+                        <input class="form-control" id="email" name="email" type="text" placeholder="Email" required>
                     </div>
                 </div>
                 <div class="modal-footer">

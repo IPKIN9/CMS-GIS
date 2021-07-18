@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.master2')
 @section('title')
 Kondisi Korban
 @endsection
@@ -21,7 +21,6 @@ Kondisi Korban
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Data kondisi korban</h2>
                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
                     <div class="clearfix"></div>
                 </div>

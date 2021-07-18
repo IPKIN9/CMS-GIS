@@ -41,6 +41,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/delete/{id:id}', 'Admin\KondisiKorbanController@destroy');
     });
 
+    Route::resource('Kasus', 'Admin\KasusController')->except('create', 'show', 'update', 'destroy');
+    Route::post('Kasus/Update', 'Admin\KasusController@update')->name('Kasus.update');
+    Route::post('Kasus/Destroy', 'Admin\KasusController@destroy')->name('Kasus.destroy');
     Route::resource('Web Decsription','Admin\WebDescController')->except('create','show');
     
     Route::resource('Tkp', 'Admin\TkpController')

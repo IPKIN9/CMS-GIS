@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.master2')
 @section('title')
 Web Description
 @endsection
@@ -20,7 +20,6 @@ Web Description
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Data Web Description</h2>
                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
                     <div class="clearfix"></div>
                 </div>
@@ -52,9 +51,11 @@ Web Description
                                             <td>{{$no++}}</td>
                                             <td>{{$d->web_description}}</td>
                                             <td>
-                                                <button id="btn-edit" data-id="{{$d->id}}" class="btn btn-warning"><i class="fa fa-edit"></i>
+                                                <button id="btn-edit" data-id="{{$d->id}}" class="btn btn-warning"><i
+                                                        class="fa fa-edit"></i>
                                                     Edit</button>
-                                                <button id="btn-hapus" data-id="{{$d->id}}" class="btn btn-danger"><i class="fa fa-trash"></i>
+                                                <button id="btn-hapus" data-id="{{$d->id}}" class="btn btn-danger"><i
+                                                        class="fa fa-trash"></i>
                                                     Hapus</button>
                                             </td>
                                         </tr>
@@ -80,12 +81,13 @@ Web Description
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Web Decsription</label>
-                        <input class="form-control" name="web_description" type="text" placeholder="Web Description" required>
+                        <input class="form-control" name="web_description" type="text" placeholder="Web Description"
+                            required>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
-                    <button type="submit" class="btn btn-primary" >SIMPAN</button>
+                    <button type="submit" class="btn btn-primary">SIMPAN</button>
                 </div>
             </form>
         </div>
