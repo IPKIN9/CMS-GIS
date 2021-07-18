@@ -40,5 +40,9 @@ Route::prefix('admin')->group(function () {
         Route::post('/update/{d:id}', 'Admin\KondisiKorbanController@update');
         Route::get('/delete/{id:id}', 'Admin\KondisiKorbanController@destroy');
     });
+
+    Route::resource('Kasus', 'Admin\KasusController')->except('create', 'show', 'update', 'destroy');
+    Route::post('Kasus/Update', 'Admin\KasusController@update')->name('Kasus.update');
+    Route::post('Kasus/Destroy', 'Admin\KasusController@destroy')->name('Kasus.destroy');
 });
 Route::get('/logout', 'AuthController@logout')->name('logout');
