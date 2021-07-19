@@ -85,6 +85,7 @@ Web Description
                             required>
                     </div>
                 </div>
+                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                     <button type="submit" class="btn btn-primary">SIMPAN</button>
