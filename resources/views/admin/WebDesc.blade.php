@@ -20,7 +20,6 @@ Web Description
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Data Web Description</h2>
                     <button class="btn btn-primary float-right" data-toggle="modal"
                         data-target="#univ_modal">Tambah</button>
                     <div class="clearfix"></div>
@@ -88,7 +87,7 @@ Web Description
                             placeholder="Web Description" required>
                     </div>
                 </div>
-                
+
                 <div class="modal-footer">
                     <button type="button" id="batal" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                     <button type="submit" id="simpan" class="btn btn-primary">SIMPAN</button>
