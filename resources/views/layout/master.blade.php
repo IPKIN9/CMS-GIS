@@ -83,8 +83,8 @@
                 <li><a class="{{ Route::is('Kasus.index') ? 'active' : ''}}" href="{{route('Kasus.index')}}"><i
                       class="fa fa-road"></i> Kasus Kriminal</a>
                 </li>
-                <li><a class="{{ Route::is('Web Decsription.index') ? 'active' : ''}}"
-                    href="{{route('Web Decsription.index')}}"><i class="fa fa-road"></i> Web Decsription</a>
+                <li><a class="{{ Route::is('Web_Decsription.index') ? 'active' : ''}}"
+                    href="{{route('Web_Decsription.index')}}"><i class="fa fa-road"></i> Web Decsription</a>
                 <li><a class="{{ Route::is('Tkp.index') ? 'active' : ''}}" href="{{route('Tkp.index')}}"><i
                       class="fa fa-road"></i> TKP</a>
                 </li>

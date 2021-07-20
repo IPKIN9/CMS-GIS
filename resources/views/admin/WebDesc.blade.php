@@ -20,7 +20,9 @@ Web Description
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#add">Tambah</button>
+                    <h2>Data Web Description</h2>
+                    <button class="btn btn-primary float-right" data-toggle="modal"
+                        data-target="#univ_modal">Tambah</button>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -51,10 +53,10 @@ Web Description
                                             <td>{{$no++}}</td>
                                             <td>{{$d->web_description}}</td>
                                             <td>
-                                                <button id="btn-edit" data-id="{{$d->id}}" class="btn btn-warning"><i
-                                                        class="fa fa-edit"></i>
+                                                <button type="button" id="btn_edit" data-id="{{$d->id}}"
+                                                    class="btn btn-warning"><i class="fa fa-edit"></i>
                                                     Edit</button>
-                                                <button id="btn-hapus" data-id="{{$d->id}}" class="btn btn-danger"><i
+                                                <button id="btn_hapus" data-id="{{$d->id}}" class="btn btn-danger"><i
                                                         class="fa fa-trash"></i>
                                                     Hapus</button>
                                             </td>
@@ -70,28 +72,67 @@ Web Description
         </div>
     </div>
 </div>
-<div id="add" class="modal fade" role="dialog">
+<div id="univ_modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">WEB DESCRIPTION</h4>
             </div>
-            <form action="{{route('Web Decsription.store')}}" method="POST">
+            <form id="form_input" action="{{route('Web_Decsription.store')}}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Web Decsription</label>
-                        <input class="form-control" name="web_description" type="text" placeholder="Web Description"
-                            required>
+                        <input type="hidden" name="id" id="id">
+                        <input class="form-control" id="webdesc" name="web_description" type="text"
+                            placeholder="Web Description" required>
                     </div>
                 </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
-                    <button type="submit" class="btn btn-primary">SIMPAN</button>
+                    <button type="button" id="batal" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                    <button type="submit" id="simpan" class="btn btn-primary">SIMPAN</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script>
+    $(document).ready(function(){
+        $.ajaxSetup({
+            headers:{
+                'X-CSRT-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('#batal').on('click',function(){
+                location.reload();
+        });
+
+        $('body').on('click','#btn_edit',function(){
+            let dataId = $(this).data('id');
+            $.get('Web_Decsription/'+ dataId + '/edit', function(data){
+                $('#univ_modal').modal('show');
+                $('#id').val(data.id);
+                $('#webdesc').val(data.web_description);
+                $('#form_input').attr('action','{{route('webdescription.update')}}')
+            });
+        });
+        $('body').on('click','#btn_hapus',function(){
+            let dataId = $(this).data('id');
+            $.get('Web_Decsription/'+ dataId + '/edit', function(data){
+                $('#simpan').html('Hapus')
+                $('#univ_modal').modal('show');
+                $('.modal-body').html('');
+                $('.modal-body').append(`
+                    <h3>Apakah anda yakin ingin menghapus data <strong>Deskripsi `+data.web_description+`</strong></h3>
+                    <input type="hidden" name="id" value="`+ data.id +`">
+                `);
+                $('#form_input').attr('action','{{route('webdescription.destroy')}}')
+            });
+        });
+    });
+    
+</script>
 @endsection
