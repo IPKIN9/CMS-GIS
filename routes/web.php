@@ -54,6 +54,11 @@ Route::prefix('admin')->group(function () {
     Route::resource('ContactUs','Admin\ContactUsController')->except('create','show','update','destroy');
     Route::post('ContactUs/Update','Admin\ContactUsController@update')->name('ContactUs.update');
     Route::post('ContactUs/Destroy','Admin\ContactUsController@destroy')->name('ContactUs.destroy');
+    Route::resource('Web_Decsription','Admin\WebDescController')
+    ->except('create','show','update','destroy');
+    Route::post('Web_Decsription/Update','Admin\WebDescController@update')->name('webdescription.update');
+    Route::post('Web_Decsription/Destroy','Admin\WebDescController@destroy')->name('webdescription.destroy');
+    Route::resource('Tkp', 'Admin\TkpController')->except('create','show');
     
 });
 Route::get('/logout', 'AuthController@logout')->name('logout');
