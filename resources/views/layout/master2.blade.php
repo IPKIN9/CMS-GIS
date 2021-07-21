@@ -51,6 +51,10 @@
                                 <li><a><i class="fa fa-warning"></i>Data Kriminalitas <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
+                                        <li><a class="{{ Route::is('kriminal.index') ? 'active' : ''}}"
+                                                href="{{route('kriminal.index')}}"><i class="fa fa-bar-chart"></i>
+                                                Kasus Kriminalitas</a>
+                                        </li>
                                         <li><a class="{{ Route::is('Tkp.index') ? 'active' : ''}}"
                                                 href="{{route('Tkp.index')}}"><i class="fa fa-map-marker"></i> TKP</a>
                                         </li>
@@ -58,13 +62,13 @@
                                 </li>
                             </ul>
                             <ul class="nav side-menu">
+                                <li><a class="{{ request()->is('admin/jeniskasus') ? 'active' : ''}}"
+                                        href="{{route('jeniskasus')}}"><i class="fa fa-list-ol"></i> Jenis
+                                        Kasus</a>
+                                </li>
                                 <li><a><i class="fa fa-car"></i>Data Lakalintas <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a class="{{ request()->is('admin/jeniskasus') ? 'active' : ''}}"
-                                                href="{{route('jeniskasus')}}"><i class="fa fa-list-ol"></i> Jenis
-                                                Kasus</a>
-                                        </li>
                                         <li><a class="{{ request()->is('admin/kondisikorban') ? 'active' : ''}}"
                                                 href="{{route('kondisikorban')}}"><i class="fa fa-child"></i> Kondisi
                                                 Korban</a>

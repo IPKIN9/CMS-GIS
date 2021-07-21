@@ -59,6 +59,14 @@ Route::middleware(['auth'])->group(function () {
             ->except('create', 'show', 'update', 'destroy');
         Route::post('Web_Decsription/Update', 'Admin\WebDescController@update')->name('webdescription.update');
         Route::post('Web_Decsription/Destroy', 'Admin\WebDescController@destroy')->name('webdescription.destroy');
+
+        Route::prefix('kriminal/')->group(function () {
+            Route::get('index', 'Admin\KriminalController@index')->name('kriminal.index');
+            Route::post('store', 'Admin\KriminalController@store')->name('kriminal.store');
+            Route::get('edit/{id}', 'Admin\KriminalController@edit')->name('kriminal.edit');
+            Route::post('update', 'Admin\KriminalController@update')->name('kriminal.update');
+            Route::post('delete', 'Admin\KriminalController@delete')->name('kriminal.delete');
+        });
     });
     Route::get('/logout', 'AuthController@logout')->name('logout');
 });
