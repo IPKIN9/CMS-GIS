@@ -51,6 +51,10 @@
                                 <li><a><i class="fa fa-warning"></i>Data Kriminalitas <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
+                                        <li><a class="{{ Route::is('kriminal.index') ? 'active' : ''}}"
+                                                href="{{route('kriminal.index')}}"><i class="fa fa-bar-chart"></i>
+                                                Kasus Kriminalitas</a>
+                                        </li>
                                         <li><a class="{{ Route::is('Tkp.index') ? 'active' : ''}}"
                                                 href="{{route('Tkp.index')}}"><i class="fa fa-map-marker"></i> TKP</a>
                                         </li>
@@ -58,13 +62,13 @@
                                 </li>
                             </ul>
                             <ul class="nav side-menu">
+                                <li><a class="{{ request()->is('admin/jeniskasus') ? 'active' : ''}}"
+                                        href="{{route('jeniskasus')}}"><i class="fa fa-list-ol"></i> Jenis
+                                        Kasus</a>
+                                </li>
                                 <li><a><i class="fa fa-car"></i>Data Lakalintas <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a class="{{ request()->is('admin/jeniskasus') ? 'active' : ''}}"
-                                                href="{{route('jeniskasus')}}"><i class="fa fa-list-ol"></i> Jenis
-                                                Kasus</a>
-                                        </li>
                                         <li><a class="{{ request()->is('admin/kondisikorban') ? 'active' : ''}}"
                                                 href="{{route('kondisikorban')}}"><i class="fa fa-child"></i> Kondisi
                                                 Korban</a>
@@ -108,7 +112,7 @@
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{route('logout')}}">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -128,7 +132,8 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>
+                                    <a class="dropdown-item" href="{{route('logout')}}"><i
+                                            class="fa fa-sign-out pull-right"></i>
                                         Log Out</a>
                                 </div>
                             </li>
