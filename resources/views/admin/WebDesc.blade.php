@@ -72,7 +72,7 @@ Web Description
     </div>
 </div>
 <div id="univ_modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">WEB DESCRIPTION</h4>
@@ -83,8 +83,8 @@ Web Description
                     <div class="form-group">
                         <label>Web Decsription</label>
                         <input type="hidden" name="id" id="id">
-                        <input class="form-control" id="webdesc" name="web_description" type="text"
-                            placeholder="Web Description" required>
+                        <textarea name="web_description" id="webdesc"
+                            class="resizable_textarea form-control"></textarea>
                     </div>
                 </div>
 

@@ -11,8 +11,9 @@ class CreateJenisKasusTable extends Migration
         Schema::create('jenis_kasus', function (Blueprint $table) {
             $table->id();
             $table->string('j_kasus');
-            $table->dateTime('created_at')->useCurrent() ;
-            $table->dateTime('updated_at')->useCurrent() ;
+            $table->string('marker_icon');
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at')->useCurrent();
             $table->softDeletes();
         });
     }
