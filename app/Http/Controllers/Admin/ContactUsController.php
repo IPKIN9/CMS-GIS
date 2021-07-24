@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Model\ContactUs;
 use Illuminate\Support\Facades\DB;
@@ -10,16 +11,9 @@ use Illuminate\Http\Request;
 class ContactUsController extends Controller
 {
     public function index()
-    { 
-        if (Session('loged_in') == 'login') 
-        {
-            $data = ContactUs::all();
-            return view('admin.ContactUs')->with('data', $data);
-        }
-        else
-        {
-            return redirect()->route('login')->with('login', 'Anda Harus Login Terlebih Dahulu');
-        }
+    {
+        $data = ContactUs::all();
+        return view('admin.ContactUs')->with('data', $data);
     }
 
     public function store(Request $request)
@@ -45,7 +39,7 @@ class ContactUsController extends Controller
 
     public function edit($id)
     {
-        $respon = ContactUs::where('id',$id)
+        $respon = ContactUs::where('id', $id)
             ->first();
         return response()->json($respon);
     }
@@ -67,13 +61,13 @@ class ContactUsController extends Controller
             'email'      => $request->email,
             'updated_at' => $date,
         );
-        ContactUs::where('id',$id)->update($data);
-        return redirect()->back()->with('status','Data berhasil di perbaharui');
+        ContactUs::where('id', $id)->update($data);
+        return redirect()->back()->with('status', 'Data berhasil di perbaharui');
     }
 
     public function destroy(Request $request)
     {
         ContactUs::where('id', $request->id)->delete();
-        return redirect()->back()->with('status','Data berhasil dihapus');
+        return redirect()->back()->with('status', 'Data berhasil dihapus');
     }
 }

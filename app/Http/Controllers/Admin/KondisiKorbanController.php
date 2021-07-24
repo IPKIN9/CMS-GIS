@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Model\KondisiKorban;
 
@@ -10,21 +11,14 @@ class KondisiKorbanController extends Controller
 {
     public function index()
     {
-        if (Session('loged_in') == 'login') {
-            $data =  KondisiKorban::all();
-            return view('admin.KondisiKorban',['data'=>$data] );
-        }
-        else
-        {
-            return redirect()->route('login')->with('login', 'Anda Harus Login Terlebih Dahulu');
-        }
-        
+        $data =  KondisiKorban::all();
+        return view('admin.KondisiKorban', ['data' => $data]);
     }
 
     public function store(Request $request)
     {
         KondisiKorban::create($request->all());
-        return back()->with('succes','Data Berhasil Di Tambahkan');
+        return back()->with('succes', 'Data Berhasil Di Tambahkan');
     }
 
     public function update(Request $request, $id)
@@ -33,14 +27,14 @@ class KondisiKorbanController extends Controller
             'kon_kasus' => $request->kon_kasus,
             'ket'       => $request->ket
         ];
-        KondisiKorban::where(['id'=>$id])->update($data);
-        return back()->with('succes','Data Berhasil Di Edit');
+        KondisiKorban::where(['id' => $id])->update($data);
+        return back()->with('succes', 'Data Berhasil Di Edit');
     }
 
     public function destroy($id)
     {
         $data =  KondisiKorban::find($id);
         $data->delete();
-        return back()->with('succes','Data Berhasil Di Hapus');
+        return back()->with('succes', 'Data Berhasil Di Hapus');
     }
 }

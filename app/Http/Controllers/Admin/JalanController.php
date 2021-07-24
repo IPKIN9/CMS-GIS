@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Model\Jalan;
 use Illuminate\Http\Request;
@@ -9,19 +10,13 @@ class JalanController extends Controller
 {
     public function index()
     {
-        if (Session('loged_in') == 'login') {
-            $data = Jalan::all();
-            return view('admin.jalan', ['data' => $data]);
-        }
-        else
-        {
-            return redirect()->route('login')->with('login', 'Anda Harus Login Terlebih Dahulu');
-        }
+        $data = Jalan::all();
+        return view('admin.jalan', ['data' => $data]);
     }
     public function store(Request $request)
     {
         Jalan::create($request->all());
-        return back()->with('succes','Data Berhasil Di Tambahkan');
+        return back()->with('succes', 'Data Berhasil Di Tambahkan');
     }
 
     public function update(Request $request, $id)
@@ -30,14 +25,14 @@ class JalanController extends Controller
             'nama_jalan' => $request->nama_jalan,
             'coordinat'  => $request->coordinat,
         ];
-        Jalan::where(['id'=>$id])->update($data);
-        return back()->with('succes','Data Berhasil Di Edit');
+        Jalan::where(['id' => $id])->update($data);
+        return back()->with('succes', 'Data Berhasil Di Edit');
     }
-    
+
     public function destroy($id)
     {
         $data =  Jalan::find($id);
         $data->delete();
-        return back()->with('succes','Data Berhasil Di Hapus');
+        return back()->with('succes', 'Data Berhasil Di Hapus');
     }
 }

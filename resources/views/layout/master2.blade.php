@@ -37,7 +37,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>GIS</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-globe"></i> <span>GIS</span></a>
                     </div>
                     <div class="clearfix"></div>
                     <br />
@@ -128,7 +128,7 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    John Doe
+                                    Admin
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
@@ -150,7 +150,7 @@
             </div>
             <footer>
                 <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    Created By Masso-Gis <a href="#">Team</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>

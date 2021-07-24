@@ -45,6 +45,7 @@ Jenis Kasus
                                         <tr>
                                             <th>No</th>
                                             <th>Jenis Kasus</th>
+                                            <th>Icon Marker</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -56,6 +57,7 @@ Jenis Kasus
                                         <tr>
                                             <td>{{$no++}}</td>
                                             <td>{{$d->j_kasus}}</td>
+                                            <td>{{$d->marker_icon}}</td>
                                             <td>
                                                 <button class="btn btn-warning" data-toggle="modal"
                                                     data-target="#edit-{{$d->id}}"><i class="fa fa-edit"></i>
@@ -91,6 +93,10 @@ Jenis Kasus
                         <label>Jenis Kasus</label>
                         <input class="form-control" name="j_kasus" type="text" placeholder="jenis kasus" required>
                     </div>
+                    <div class="form-group">
+                        <label>Icon Marker</label>
+                        <input class="form-control" name="marker_icon" type="text" placeholder="Icon Marker" required>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">BATAL</button>
@@ -115,6 +121,10 @@ Jenis Kasus
                     <div class="form-group">
                         <label>Jenis Kasus</label>
                         <input class="form-control" name="j_kasus" type="text" value="{{$d->j_kasus}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Icon Marker</label>
+                        <input class="form-control" name="marker_icon" type="text" value="{{$d->marker_icon}}" required>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -36,13 +36,10 @@ class AuthController extends Controller
 
         $credentials = $request->only('username', 'password');
 
-        if (Auth::attempt($credentials)) { // true sekalian session field di users nanti bisa dipanggil via Auth
-            //Login Success
-            $request->session()->put('full_name', Auth::user()->nama,);
-            $request->session()->put('loged_in', 'login',);
+        if (Auth::attempt($credentials)) {
+            $request->session()->put('full_name', Auth::user()->nama);
             return redirect()->route('dashboard');
-        } else { // false
-            // Session::flash('error', 'Username atau password salah');
+        } else {
             return redirect()->route('login')->with('error', 'Username atau password salah');
         }
     }
@@ -55,14 +52,17 @@ class AuthController extends Controller
     {
         $rules = [
             'nama' => 'required',
-            'username' => 'required',
-            'password' => 'required'
+            'username' => 'required|unique:users',
+            'password' => 'required|min:5|max:12'
         ];
 
         $messages = [
             'nama.required' => 'Nama Tidak Boleh Kosong',
             'username.required' => 'Username Tidak Boleh Kosong',
-            'password.required' => 'Password Tidak Boleh Kosong!!!'
+            'password.required' => 'Password Tidak Boleh Kosong!!!',
+            'username.unique' => 'Username Sudah Dimiliki',
+            'password.min' => 'Password Terkalu Pendek',
+            'password.max' => 'Password Terlalu Panjang'
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
